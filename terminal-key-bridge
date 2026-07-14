@@ -1,0 +1,5 @@
+#!/usr/bin/env python3
+from terminal_key_bridge.app import main
+
+main()
+
