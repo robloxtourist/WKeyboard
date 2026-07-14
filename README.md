@@ -17,13 +17,13 @@
 
 ## Быстрая установка на Debian/Ubuntu
 
-После клонирования репозитория:
+Установка одной командой:
 
 ```bash
-cd WKeyboard
-chmod +x install.sh
-./install.sh
+git clone https://github.com/robloxtourist/WKeyboard.git && cd WKeyboard && ./install.sh
 ```
+
+Команда клонирует репозиторий, переходит в его каталог и запускает установщик. Пароль `sudo` потребуется только в том случае, если в системе ещё не установлены зависимости из репозитория Debian.
 
 Установщик сам:
 
