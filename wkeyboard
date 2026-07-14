@@ -1,0 +1,6 @@
+#!/bin/sh
+set -eu
+
+APP_DIR=${XDG_DATA_HOME:-"$HOME/.local/share"}/wkeyboard
+exec python3 "$APP_DIR/terminal-key-bridge" "$@"
+

@@ -15,13 +15,43 @@
 
 Открытие пульта выключает захват клавиатуры. Кнопка «Включить захват» возвращает приложение в режим клавиатуры.
 
-## Установка и запуск на рабочем Debian
+## Быстрая установка на Debian/Ubuntu
+
+После клонирования репозитория:
 
 ```bash
-sudo apt install python3-tk python3-venv
-python3 -m venv .venv
-.venv/bin/pip install -r requirements.txt
-chmod +x terminal-key-bridge
+cd WKeyboard
+chmod +x install.sh
+./install.sh
+```
+
+Установщик сам:
+
+- проверит Python, Tkinter и Paramiko;
+- при необходимости установит `python3-tk` и `python3-paramiko` из репозитория Debian;
+- установит приложение только для текущего пользователя;
+- создаст команду `wkeyboard` в `~/.local/bin`.
+
+Запуск после установки:
+
+```bash
+wkeyboard
+```
+
+Если `~/.local/bin` ещё не находится в `PATH`:
+
+```bash
+~/.local/bin/wkeyboard
+```
+
+Виртуальное окружение и доступ к PyPI для обычной установки не требуются.
+
+## Запуск без установки
+
+Если системные зависимости уже установлены:
+
+```bash
+sudo apt install python3-tk python3-paramiko
 ./terminal-key-bridge
 ```
 
@@ -36,6 +66,6 @@ chmod +x terminal-key-bridge
 
 ## Требования
 
-- рабочий компьютер: Debian/Ubuntu, Python 3.10+, Tk и Paramiko;
+- рабочий компьютер: Debian/Ubuntu, Python 3.10+, пакеты `python3-tk` и `python3-paramiko`;
 - удалённый терминал: только доступный SSH-сервер;
 - никаких файлов, пакетов, `sudoers` или служб на терминале не требуется.
